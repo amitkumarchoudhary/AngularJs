@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  </head>
+
+
+<body ng-controller="MainCtrl as mainCon">
+<div class="" style="height: 450px;width: 1200px;">
+    <tr>
+        <th><h5>Search </h5></th>
+        <th><input type="text" /></th>
+        <th><input type="submit" ng-click="mainCon.delete();"/></th>
+    </tr>
+    <div style="overflow:auto;height: 500px;">
+        <table> 
+          <tr>
+           <th style="width: 100px;"><input type="checkbox" ng-model="isChecked" ng-change="mainCon.selectCheckBoxItem(item.employee_id);"/></th>
+           <th style="width: 100px;">Employee_id</th>
+           <th style="width: 100px;">First_Name</th>
+           <th style="width: 100px;">Last_Name</th>
+           <th style="width: 120px;">Email</th>
+           <th style="width: 100px;">Phone_Number</th>
+           <th style="width: 100px;">Salary</th>
+           <th style="width: 120px;">Filelocation</th>
+           <th style="width: 100px;"> Created_Date</th>
+           <th style="width: 100px;">Updated_Date</th>
+           <th style="width: 100px;">Department_id</th>
+          </tr>
+        <tr ng-repeat="item in mainCon.dataAll ">
+          <!-- <td><input type="checkbox" ng-click="mainCon.selectCheckBoxItem(item.employee_id);"/></td> -->
+          <td><input type="checkbox" ng-model="isChecked" ng-change="mainCon.selectCheckBoxItem(item.employee_id);"/></td> 
+          <td>{{item.employee_id}}</td>
+          <td>{{item.first_name}}</td>
+          <td>{{item.last_name}}</td>
+          <td>{{item.email}}</td>
+          <td>{{item.phone_number}}</td>
+          <td>{{item.salary}}</td>
+          <td>{{item.filelocation}}</td>
+          <td>{{item.created_Date}}</td>
+          <td>{{item.updated_Date}}</td>
+          <td >{{item.department_id}}</td>
+          
+          
+         
+        </tr>
+
+        </table> 
+       
+        
+  </div>
+  <tr style="float: right;">
+    <nav aria-label="Page navigation example">
+        <ul class="pagination">
+          <li class="page-item">
+            <a class="page-link" href="#" aria-label="Previous">
+              <span aria-hidden="true">&laquo;</span>
+            </a>
+          </li>
+          <li class="page-item"><a class="page-link" href="#">1</a></li>
+          <li class="page-item"><a class="page-link" href="#">2</a></li>
+          <li class="page-item"><a class="page-link" href="#">3</a></li>
+          <li class="page-item">
+            <a class="page-link" href="#" aria-label="Next">
+              <span aria-hidden="true">&raquo;</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </tr>
+</div>
+      
+</body>
+</html>
